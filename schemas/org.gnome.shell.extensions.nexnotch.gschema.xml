@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.nexnotch"
+          path="/org/gnome/shell/extensions/nexnotch/">
+
+    <!-- modules -->
+    <key name="show-system"        type="b"><default>true</default><summary>Show system monitor in expanded view</summary></key>
+    <key name="show-notifications" type="b"><default>true</default><summary>Enable dynamic notification peek</summary></key>
+    <key name="show-calendar"      type="b"><default>true</default><summary>Enable Google Calendar peek</summary></key>
+    <key name="show-tasks"         type="b"><default>true</default><summary>Enable Google Tasks peek</summary></key>
+    <key name="show-claude-usage"  type="b"><default>true</default><summary>Show Claude Code usage/limit tab</summary></key>
+
+    <!-- clock -->
+    <key name="hide-datemenu"    type="b"><default>true</default><summary>Hide the built-in GNOME clock / date menu</summary></key>
+    <key name="show-date"        type="b"><default>true</default><summary>Show date next to time in collapsed pill</summary></key>
+    <key name="show-seconds"     type="b"><default>false</default><summary>Include seconds in the clock</summary></key>
+    <key name="clock-format"     type="s"><default>"24h"</default><summary>Clock format (24h / 12h)</summary></key>
+
+    <!-- size -->
+    <key name="collapsed-width"  type="i"><default>240</default><range min="140" max="480"/><summary>Collapsed notch width</summary></key>
+    <key name="collapsed-height" type="i"><default>32</default> <range min="24"  max="56"/> <summary>Collapsed notch height</summary></key>
+    <key name="expanded-width"   type="i"><default>640</default><range min="420" max="960"/><summary>Expanded notch width</summary></key>
+    <key name="expanded-height"  type="i"><default>280</default><range min="200" max="480"/><summary>Expanded notch height</summary></key>
+    <key name="corner-radius"    type="i"><default>20</default> <range min="0"   max="32"/> <summary>Bottom corner radius</summary></key>
+
+    <!-- colors (CSS rgba strings so users can use any transparency) -->
+    <key name="bg-color"         type="s"><default>"rgba(0, 0, 0, 1.0)"</default><summary>Notch background color</summary></key>
+    <key name="accent-color"     type="s"><default>"rgba(120, 170, 255, 0.32)"</default><summary>Accent color (active tab, bar fill)</summary></key>
+
+    <!-- battery icon tinting -->
+    <key name="battery-charging-color" type="s"><default>"rgba(80, 220, 120, 1.0)"</default><summary>Battery icon color while charging</summary></key>
+    <key name="battery-normal-color"   type="s"><default>"rgba(255, 255, 255, 0.85)"</default><summary>Battery icon color while discharging</summary></key>
+    <key name="battery-low-color"      type="s"><default>"rgba(255, 140, 60, 1.0)"</default> <summary>Battery icon color when low</summary></key>
+
+    <!-- performance -->
+    <key name="poll-interval"    type="i"><default>1</default><range min="1" max="30"/><summary>System monitor poll interval (seconds)</summary></key>
+
+    <!-- notifications -->
+    <key name="notif-auto-dismiss" type="i"><default>8</default><range min="0" max="120"/><summary>Auto-dismiss banner notifications after N seconds (0=disabled)</summary></key>
+
+    <!-- notifications: DND + native suppression -->
+    <key name="notif-suppress-native" type="b"><default>true</default><summary>Auto-dismiss native banner when notch peek shows</summary></key>
+
+    <!-- misc -->
+    <key name="hide-top-bar-center"  type="b"><default>false</default><summary>(reserved) keep other center-box widgets hidden</summary></key>
+
+    <!-- keybindings -->
+    <key name="shortcut-toggle" type="as">
+      <default>["&lt;Super&gt;n"]</default>
+      <summary>Toggle the notch (expand/collapse)</summary>
+    </key>
+
+    <!-- notes -->
+    <key name="notes-folder" type="s">
+      <default>"/home/mert/Yazılım/MertProjeler/NexNotchNotes"</default>
+      <summary>Folder where notes are saved as markdown files, one dated subfolder per day</summary>
+    </key>
+
+    <!-- weather -->
+    <key name="weather-location" type="s">
+      <default>""</default>
+      <summary>Weather location (city name or lat,lon). Empty = IP auto.</summary>
+    </key>
+    <key name="weather-unit" type="s">
+      <choices><choice value="metric"/><choice value="imperial"/></choices>
+      <default>"metric"</default>
+      <summary>Temperature unit</summary>
+    </key>
+    <key name="weather-refresh" type="i">
+      <default>30</default>
+      <range min="5" max="240"/>
+      <summary>Weather refresh interval (minutes)</summary>
+    </key>
+
+    <!-- claude usage -->
+    <key name="claude-usage-refresh" type="i">
+      <default>15</default>
+      <range min="5" max="120"/>
+      <summary>Claude usage refresh interval (minutes)</summary>
+    </key>
+
+    <!-- pomodoro -->
+    <key name="pomodoro-work"   type="i"><default>25</default><range min="1" max="180"/><summary>(legacy) Pomodoro work duration</summary></key>
+    <key name="pomodoro-break"  type="i"><default>5</default> <range min="1" max="60"/> <summary>(legacy) Short break</summary></key>
+    <key name="pomodoro-long"   type="i"><default>15</default><range min="1" max="60"/> <summary>Pomodoro long break (min)</summary></key>
+    <key name="pomodoro-cycles" type="i"><default>4</default> <range min="1" max="10"/> <summary>Work cycles before long break</summary></key>
+
+    <!-- pomodoro presets: each entry is "work/break" e.g. "50/10" -->
+    <key name="pomodoro-presets" type="as">
+      <default>["50/10","25/5","10/2"]</default>
+      <summary>Preset work/break pairs (minutes)</summary>
+    </key>
+    <key name="pomodoro-active-preset" type="s">
+      <default>"25/5"</default>
+      <summary>Currently selected preset</summary>
+    </key>
+
+    <!-- weather dual location -->
+    <key name="weather-location-2" type="s">
+      <default>""</default>
+      <summary>Secondary weather location (empty = disabled)</summary>
+    </key>
+    <key name="weather-location-2-label" type="s">
+      <default>""</default>
+      <summary>Friendly label for secondary location (e.g. 'Home', 'Work')</summary>
+    </key>
+    <key name="weather-location-label" type="s">
+      <default>""</default>
+      <summary>Friendly label for primary location</summary>
+    </key>
+
+    <!-- calendar / tasks source filter (empty = all) -->
+    <key name="calendar-enabled-sources" type="as">
+      <default>[]</default>
+      <summary>If non-empty, only sync events from these GOA account emails</summary>
+    </key>
+    <key name="tasks-enabled-lists" type="as">
+      <default>[]</default>
+      <summary>If non-empty, only show tasks from these list display names</summary>
+    </key>
+  </schema>
+</schemalist>

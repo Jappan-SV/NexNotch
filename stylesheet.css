@@ -1,0 +1,747 @@
+/* ——— surface ——— */
+/* Note: .nexnotch-bg & .nexnotch-peek background / radius + accent colors
+   are overridden at runtime from gsettings (see notch.js _applyColors). */
+
+.nexnotch {
+    background-color: rgb(0, 0, 0);
+    border-radius: 0 0 20px 20px;
+}
+
+.nexnotch-bg {
+    background-color: rgb(0, 0, 0);
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 0;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* ——— collapsed pill ——— */
+
+.nexnotch-collapsed {
+    padding: 0 14px;
+    spacing: 0;
+}
+
+.nexnotch-cluster {
+    spacing: 7px;
+}
+
+.nexnotch-left {
+    min-width: 60px;
+}
+
+.nexnotch-right {
+    min-width: 60px;
+    x-align: end;
+}
+
+.nexnotch-battery-icon,
+.nexnotch-media-icon {
+    padding: 0 1px;
+}
+
+.nexnotch-privacy-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background-color: rgba(255, 90, 70, 0.95);
+    box-shadow: 0 0 6px rgba(255, 90, 70, 0.65);
+}
+.nexnotch-privacy-dot.cam { background-color: rgba(255, 70, 70, 1); box-shadow: 0 0 6px rgba(255, 70, 70, 0.75); }
+.nexnotch-privacy-dot.mic { background-color: rgba(255, 170, 60, 0.95); box-shadow: 0 0 6px rgba(255, 170, 60, 0.65); }
+
+.nexnotch-pomo-mini {
+    color: rgba(140, 220, 140, 0.95);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    font-feature-settings: "tnum";
+    padding: 0 4px;
+}
+.nexnotch-pomo-mini.break {
+    color: rgba(255, 190, 80, 0.95);
+}
+.nexnotch-pomo-mini.idle {
+    color: rgba(255, 255, 255, 0.38);
+}
+.nexnotch-pomo-mini.paused { color: rgba(255, 200, 120, 0.75); }
+
+/* music pill — collapsed extended state */
+.nexnotch-music-pill {
+    spacing: 0;
+    padding: 0 6px 0 4px;
+    max-width: 280px;
+}
+.nexnotch-music-title {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 11px; font-weight: 600;
+}
+.nexnotch-music-sep {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+}
+.nexnotch-music-artist {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px; font-weight: 400;
+}
+
+/* system tab inline (compact) rows */
+.nexnotch-sys-body { spacing: 16px; padding-top: 4px; }
+.nexnotch-sys-left { spacing: 3px; }
+.nexnotch-sys-inline-row { spacing: 10px; padding: 2px 2px; }
+.nexnotch-sys-inline-label {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px; font-weight: 500;
+    min-width: 62px;
+}
+.nexnotch-sys-inline-value {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 11px; font-weight: 500;
+    font-feature-settings: "tnum";
+}
+
+/* music card in system tab */
+.nexnotch-music-card {
+    spacing: 6px; padding: 8px 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    min-width: 220px;
+}
+.nexnotch-music-card-top { spacing: 10px; }
+.nexnotch-music-art        { border-radius: 6px; }
+.nexnotch-music-art-fallback { color: rgba(255, 255, 255, 0.7); }
+.nexnotch-music-txt { spacing: 2px; }
+.nexnotch-music-card-title {
+    color: white; font-size: 12px; font-weight: 600;
+}
+.nexnotch-music-card-artist {
+    color: rgba(255, 255, 255, 0.6); font-size: 10px;
+}
+.nexnotch-music-ctrls { spacing: 10px; padding-top: 4px; }
+.nexnotch-music-btn {
+    color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 13px;
+}
+.nexnotch-music-btn:hover { background-color: rgba(255, 255, 255, 0.15); color: white; }
+.nexnotch-music-btn.disabled { color: rgba(255, 255, 255, 0.25); }
+
+/* ——— notes ——— */
+.nexnotch-notes { spacing: 8px; }
+.nexnotch-notes-header { spacing: 8px; padding-bottom: 2px; }
+.nexnotch-notes-heading { color: rgba(255, 255, 255, 0.7); font-size: 11px; font-weight: 700; letter-spacing: 0.4px; }
+.nexnotch-notes-new {
+    color: rgba(255, 255, 255, 0.85); font-size: 10px; font-weight: 700;
+    padding: 3px 12px; border-radius: 999px;
+    background-color: rgba(120, 170, 255, 0.22); border: 0;
+}
+.nexnotch-notes-new:hover { background-color: rgba(120, 170, 255, 0.35); color: white; }
+
+.nexnotch-notes-scroll { max-height: 300px; }
+.nexnotch-notes-list { spacing: 10px; }
+.nexnotch-notes-card {
+    spacing: 6px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+}
+.nexnotch-notes-title-entry {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2px 2px 6px 2px;
+    color: white;
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+.nexnotch-notes-entry {
+    background-color: transparent;
+    border: 0;
+    padding: 6px 2px;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 12px;
+    min-height: 90px;
+}
+.nexnotch-notes-footer { padding-top: 2px; spacing: 8px; }
+.nexnotch-notes-info   { color: rgba(255, 255, 255, 0.35); font-size: 9px; }
+.nexnotch-notes-clear  {
+    color: rgba(255, 255, 255, 0.7); font-size: 10px; padding: 3px 10px;
+    border-radius: 999px; background-color: rgba(255, 255, 255, 0.06); border: 0;
+}
+.nexnotch-notes-clear:hover { background-color: rgba(255, 120, 120, 0.2); color: white; }
+
+/* ——— weather ——— */
+.nexnotch-weather { spacing: 10px; }
+.nexnotch-weather-header { spacing: 14px; padding-bottom: 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.nexnotch-weather-area {
+    color: white; font-family: "SF Pro Display", "Inter", sans-serif;
+    font-size: 15px; font-weight: 600;
+}
+.nexnotch-weather-desc { color: rgba(255, 255, 255, 0.6); font-size: 11px; }
+.nexnotch-weather-temp {
+    color: white; font-family: "SF Pro Display", "Inter", sans-serif;
+    font-size: 32px; font-weight: 500; letter-spacing: -0.8px;
+    font-feature-settings: "tnum";
+}
+.nexnotch-weather-meta { spacing: 10px; padding: 4px 0 6px 0; }
+.nexnotch-weather-meta-cell { spacing: 1px; x-align: center; }
+.nexnotch-weather-meta-label { color: rgba(255, 255, 255, 0.45); font-size: 9px; font-weight: 600; letter-spacing: 0.4px; }
+.nexnotch-weather-meta-value { color: rgba(255, 255, 255, 0.92); font-size: 12px; font-weight: 500; }
+.nexnotch-weather-forecast { spacing: 8px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.nexnotch-weather-day { spacing: 2px; padding: 6px 4px; border-radius: 8px; background-color: rgba(255, 255, 255, 0.04); }
+.nexnotch-weather-day-label { color: rgba(255, 255, 255, 0.72); font-size: 10px; font-weight: 700; letter-spacing: 0.3px; }
+.nexnotch-weather-day-temp  { color: white; font-size: 12px; font-weight: 500; font-feature-settings: "tnum"; }
+.nexnotch-weather-day-desc  { color: rgba(255, 255, 255, 0.5); font-size: 9px; }
+
+/* ——— pomodoro ——— */
+.nexnotch-pomo { spacing: 6px; padding: 8px 0; }
+.nexnotch-pomo-big {
+    color: white; font-family: "SF Pro Display", "Inter", sans-serif;
+    font-size: 26px; font-weight: 600; letter-spacing: -0.5px;
+    font-feature-settings: "tnum";
+}
+.nexnotch-pomo-state { color: rgba(140, 220, 140, 0.85); font-size: 11px; font-weight: 600; letter-spacing: 0.4px; }
+.nexnotch-pomo-cycles { color: rgba(255, 255, 255, 0.4); font-size: 10px; font-weight: 500; }
+.nexnotch-pomo-btns { spacing: 8px; padding-top: 4px; }
+.nexnotch-pomo-btn {
+    color: rgba(255, 255, 255, 0.85); font-size: 11px; font-weight: 600;
+    padding: 6px 18px; border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.08); border: 0;
+}
+.nexnotch-pomo-btn:hover { background-color: rgba(255, 255, 255, 0.16); color: white; }
+.nexnotch-pomo-btn.primary {
+    background-color: rgba(140, 220, 140, 0.28); color: white;
+}
+.nexnotch-pomo-btn.primary:hover { background-color: rgba(140, 220, 140, 0.45); }
+
+.nexnotch-pomo-presets { spacing: 6px; padding-bottom: 4px; }
+.nexnotch-pomo-preset {
+    color: rgba(255, 255, 255, 0.62); font-size: 10px; font-weight: 600;
+    padding: 4px 10px; border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.05); border: 0;
+}
+.nexnotch-pomo-preset:hover  { background-color: rgba(255, 255, 255, 0.12); color: white; }
+.nexnotch-pomo-preset.active {
+    background-color: rgba(140, 220, 140, 0.22);
+    color: white;
+}
+
+/* weather location switcher */
+.nexnotch-weather-switcher { spacing: 4px; padding-bottom: 6px; }
+.nexnotch-weather-tab {
+    color: rgba(255, 255, 255, 0.6); font-size: 10px; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.05); border: 0;
+    letter-spacing: 0.3px;
+}
+.nexnotch-weather-tab:hover  { background-color: rgba(255, 255, 255, 0.12); color: white; }
+.nexnotch-weather-tab.active { background-color: rgba(120, 170, 255, 0.22); color: white; }
+
+/* task list segmented tabs */
+.nexnotch-task-lists {
+    spacing: 2px; padding: 3px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+.nexnotch-task-list-tab {
+    color: rgba(255, 255, 255, 0.55); font-size: 10px; font-weight: 600;
+    padding: 4px 8px; border-radius: 6px;
+    background-color: transparent; border: 0;
+}
+.nexnotch-task-list-tab:hover  { color: rgba(255, 255, 255, 0.85); }
+.nexnotch-task-list-tab.active {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: white;
+}
+
+/* ——— quick hub ——— */
+.nexnotch-quick { spacing: 8px; }
+.nexnotch-quick-row { spacing: 8px; padding: 2px 0; }
+.nexnotch-quick-pill {
+    spacing: 5px; padding: 4px 10px; border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.nexnotch-quick-pill.active {
+    background-color: rgba(255, 90, 70, 0.2);
+    border: 1px solid rgba(255, 90, 70, 0.35);
+}
+.nexnotch-quick-pill-label { color: rgba(255, 255, 255, 0.5); font-size: 10px; font-weight: 600; letter-spacing: 0.4px; }
+.nexnotch-quick-pill-value { color: white; font-size: 11px; font-weight: 600; font-feature-settings: "tnum"; }
+
+.nexnotch-quick-section { color: rgba(255, 255, 255, 0.45); font-size: 10px; font-weight: 700; letter-spacing: 0.5px; padding-top: 4px; }
+.nexnotch-quick-bt-row { padding: 2px 0; spacing: 8px; }
+.nexnotch-quick-bt-name { color: rgba(255, 255, 255, 0.9); font-size: 11px; }
+.nexnotch-quick-bt-pct  { color: rgba(140, 220, 140, 0.95); font-size: 10px; font-weight: 700; font-feature-settings: "tnum"; }
+.nexnotch-quick-bt-pct.low { color: rgba(255, 110, 90, 0.95); }
+
+.nexnotch-quick-actions { spacing: 6px; padding-top: 4px; }
+.nexnotch-quick-action {
+    color: rgba(255, 255, 255, 0.9); font-size: 10px; font-weight: 600;
+    padding: 6px 10px; border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.06); border: 0;
+    transition-duration: 160ms;
+}
+.nexnotch-quick-action:hover { background-color: rgba(255, 255, 255, 0.14); color: white; }
+.nexnotch-quick-action.armed {
+    background-color: rgba(255, 100, 90, 0.35);
+    color: white;
+    font-weight: 700;
+}
+
+.nexnotch-clock {
+    color: rgba(255, 255, 255, 0.96);
+    font-family: "SF Pro Display", "Inter", "Cantarell", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    font-feature-settings: "tnum";
+}
+
+.nexnotch-date-mini {
+    color: rgba(255, 255, 255, 0.55);
+    font-family: "SF Pro Text", "Inter", "Cantarell", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.nexnotch-dot {
+    background-color: rgba(255, 120, 90, 0.95);
+    border-radius: 999px;
+    width: 6px;
+    height: 6px;
+    box-shadow: 0 0 6px rgba(255, 120, 90, 0.7);
+}
+.nexnotch-dot.hot { background-color: rgba(255, 80, 60, 1); }
+
+/* ——— expanded panel ——— */
+
+.nexnotch-expanded {
+    padding: 14px 18px;
+    spacing: 12px;
+}
+
+.nexnotch-header {
+    spacing: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.nexnotch-big-clock {
+    color: rgba(255, 170, 60, 0.95);
+    font-family: "SF Pro Display", "Inter", "Cantarell", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    font-feature-settings: "tnum";
+}
+
+.nexnotch-date {
+    color: rgba(255, 255, 255, 0.55);
+    font-family: "SF Pro Text", "Inter", "Cantarell", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.nexnotch-date-month {
+    color: rgba(255, 130, 200, 0.9);
+    font-family: "SF Pro Text", "Inter", "Cantarell", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ——— tabs (iOS segmented control) ——— */
+
+.nexnotch-tabs {
+    spacing: 2px;
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.nexnotch-tab {
+    color: rgba(255, 255, 255, 0.58);
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-family: "SF Pro Text", "Inter", "Cantarell", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    border: 0;
+    transition-duration: 160ms;
+}
+.nexnotch-tab:focus {
+    border: 1px solid rgba(120, 170, 255, 0.7);
+    padding: 3px 5px;
+}
+.nexnotch-tab:hover { color: rgba(255, 255, 255, 0.9); }
+.nexnotch-tab:active,
+.nexnotch-tab:active:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.nexnotch-content { padding: 4px 2px 2px 2px; }
+
+/* ——— system tab ——— */
+
+.nexnotch-sys       { spacing: 10px; }
+.nexnotch-sys-grid  { padding: 2px; }
+
+.nexnotch-sys-headline {
+    spacing: 14px;
+    padding: 4px 2px 12px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.nexnotch-sys-headline-cell { spacing: 2px; }
+.nexnotch-sys-headline-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.nexnotch-sys-headline-value {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    font-feature-settings: "tnum";
+    letter-spacing: -0.3px;
+}
+.nexnotch-sys-headline-value.warn   { color: rgba(255, 190, 80, 0.95); }
+.nexnotch-sys-headline-value.danger { color: rgba(255, 100, 90, 0.95); }
+
+/* stats tab */
+.nexnotch-stats { spacing: 10px; }
+.nexnotch-stats-head { spacing: 14px; padding-bottom: 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.nexnotch-stats-cell { spacing: 2px; }
+.nexnotch-stats-value {
+    color: white; font-size: 20px; font-weight: 600;
+    font-feature-settings: "tnum"; letter-spacing: -0.3px;
+}
+.nexnotch-stats-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.4px;
+}
+.nexnotch-stats-chart-title {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.3px;
+    padding-top: 4px;
+}
+.nexnotch-stats-chart {
+    spacing: 6px;
+    padding: 4px 0 0 0;
+    min-height: 108px;
+}
+.nexnotch-stats-col { spacing: 3px; y-align: end; }
+.nexnotch-stats-bar {
+    background-color: rgba(120, 170, 255, 0.65);
+    border-radius: 3px 3px 0 0;
+    min-width: 16px;
+}
+.nexnotch-stats-bar.today {
+    background-color: rgba(140, 220, 140, 0.85);
+}
+.nexnotch-stats-bar-value {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 9px; font-weight: 600;
+    font-feature-settings: "tnum";
+}
+.nexnotch-stats-bar-label {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 9px; font-weight: 600; letter-spacing: 0.3px;
+}
+.nexnotch-stats-totals {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 10px; font-weight: 500;
+    padding-top: 4px;
+}
+
+.nexnotch-sys-label {
+    color: rgba(255, 255, 255, 0.52);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    min-width: 78px;
+}
+.nexnotch-sys-value {
+    color: rgba(255, 255, 255, 0.96);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    font-feature-settings: "tnum";
+}
+
+.nexnotch-bar {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    margin: 2px 4px 4px 4px;
+    height: 3px;
+}
+.nexnotch-bar-fill {
+    background-color: rgba(120, 170, 255, 0.88);
+    border-radius: 999px;
+    height: 3px;
+    transition-duration: 280ms;
+}
+.nexnotch-bar-fill.warn   { background-color: rgba(255, 190, 80, 0.9); }
+.nexnotch-bar-fill.danger { background-color: rgba(255, 100, 80, 0.92); }
+
+/* ——— calendar / tasks ——— */
+
+.nexnotch-cal-layout { spacing: 16px; }
+
+.nexnotch-cal-month {
+    spacing: 3px;
+    padding: 2px;
+    width: 168px;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding-right: 14px;
+}
+.nexnotch-cal-month-header { spacing: 2px; }
+.nexnotch-cal-month-nav {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 6px;
+    border-radius: 999px;
+    background-color: transparent;
+    border: 0;
+}
+.nexnotch-cal-month-nav:hover { color: white; background-color: rgba(255, 255, 255, 0.1); }
+.nexnotch-cal-month-title {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+}
+.nexnotch-cal-dow-cell {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 8px;
+    font-weight: 700;
+}
+.nexnotch-cal-week { spacing: 0; }
+.nexnotch-cal-day-cell {
+    font-size: 9px;
+    font-weight: 500;
+    padding: 3px 0;
+    border-radius: 999px;
+}
+.nexnotch-cal-day-cell.no-event  { color: rgba(255, 255, 255, 0.75); }
+.nexnotch-cal-day-cell.has-event { color: rgba(120, 170, 255, 0.98); font-weight: 700; }
+.nexnotch-cal-day-cell.today {
+    background-color: rgba(120, 170, 255, 0.28);
+    color: white;
+    font-weight: 700;
+}
+
+.nexnotch-cal-agenda { spacing: 0; }
+.nexnotch-cal-agenda-scroll { max-height: 260px; }
+
+.nexnotch-cal-row, .nexnotch-task-row {
+    padding: 4px 2px;
+    spacing: 10px;
+    border-radius: 6px;
+}
+.nexnotch-cal-row:hover, .nexnotch-task-row:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.nexnotch-cal-when {
+    color: rgba(120, 170, 255, 0.88);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 70px;
+    letter-spacing: 0.3px;
+}
+.nexnotch-cal-title {
+    color: rgba(255, 255, 255, 0.94);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.nexnotch-task-row.done .nexnotch-task-title { color: rgba(255, 255, 255, 0.4); text-decoration: line-through; }
+.nexnotch-task-check {
+    color: rgba(140, 220, 140, 0.9);
+    min-width: 18px;
+    font-size: 13px;
+    background-color: transparent;
+    border: 0;
+}
+.nexnotch-task-title {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 11px;
+    font-weight: 500;
+}
+.nexnotch-task-list-tag {
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 9px;
+    font-weight: 600;
+}
+.nexnotch-task-due {
+    color: rgba(255, 200, 120, 0.8);
+    font-size: 10px;
+    font-weight: 600;
+}
+.nexnotch-task-scroll { max-height: 260px; }
+
+.nexnotch-task-add-wrap { padding-bottom: 6px; }
+.nexnotch-task-add-btn {
+    color: rgba(120, 170, 255, 0.92);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background-color: rgba(120, 170, 255, 0.14);
+    border: 0;
+}
+.nexnotch-task-add-btn:hover { background-color: rgba(120, 170, 255, 0.24); }
+.nexnotch-task-add-btn.disabled { color: rgba(255, 255, 255, 0.25); background-color: rgba(255, 255, 255, 0.04); }
+
+.nexnotch-task-compose {
+    spacing: 6px;
+    padding: 8px;
+    margin-bottom: 6px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+.nexnotch-task-compose-title, .nexnotch-task-compose-notes {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4px 2px;
+    color: white;
+    font-size: 11px;
+}
+.nexnotch-task-compose-btns { spacing: 8px; x-align: end; }
+.nexnotch-task-compose-cancel, .nexnotch-task-compose-submit {
+    font-size: 10px; font-weight: 700; padding: 3px 12px; border-radius: 999px; border: 0;
+}
+.nexnotch-task-compose-cancel { color: rgba(255, 255, 255, 0.6); background-color: rgba(255, 255, 255, 0.06); }
+.nexnotch-task-compose-submit { color: white; background-color: rgba(120, 170, 255, 0.35); }
+.nexnotch-task-compose-submit:hover { background-color: rgba(120, 170, 255, 0.5); }
+
+.nexnotch-empty {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 28px 10px;
+}
+
+/* ——— peek (dynamic notification) ——— */
+
+.nexnotch-peek {
+    padding: 10px 12px 10px 14px;
+    spacing: 12px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.55);
+}
+
+.nexnotch-peek-icon-bin {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 2px 2px 2px 4px;
+}
+.nexnotch-peek-icon {
+    color: rgba(255, 255, 255, 0.92);
+    icon-size: 28px;
+}
+
+.nexnotch-peek-text { spacing: 2px; }
+
+.nexnotch-peek-title {
+    color: white;
+    font-family: "SF Pro Display", "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+}
+
+.nexnotch-peek-time {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    font-feature-settings: "tnum";
+    padding-left: 6px;
+}
+
+.nexnotch-peek-body {
+    color: rgba(255, 255, 255, 0.78);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.nexnotch-peek-dismiss {
+    color: rgba(255, 255, 255, 0.55);
+    background-color: transparent;
+    border: 0;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+.nexnotch-peek-dismiss:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* ——— claude usage ——— */
+
+.nexnotch-claude { spacing: 10px; padding: 8px 2px; }
+
+.nexnotch-claude-rings { spacing: 36px; }
+
+.nexnotch-claude-ringcol { spacing: 6px; }
+
+.nexnotch-claude-ring-pct {
+    color: rgba(255, 255, 255, 0.92);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-feature-settings: "tnum";
+}
+.nexnotch-claude-ring-pct.warn   { color: rgba(255, 190, 80, 0.95); }
+.nexnotch-claude-ring-pct.danger { color: rgba(255, 100, 90, 0.95); }
+
+.nexnotch-claude-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "SF Pro Text", "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.nexnotch-claude-reset {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 10px;
+}
+
+.nexnotch-claude-refresh-row {
+    padding-top: 8px;
+    spacing: 8px;
+}
+.nexnotch-claude-refresh-label {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 9px;
+}
+.nexnotch-claude-refresh-btn {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 0;
+}
+.nexnotch-claude-refresh-btn:hover { background-color: rgba(255, 255, 255, 0.14); color: white; }
